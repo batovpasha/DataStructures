@@ -2,33 +2,33 @@
 
 class List {
   constructor() {
-	this.data = null;
-	this.next = null;
-	this.prev = null;
-	this.head = null;	
+	  this.data = null;
+	  this.next = null;
+	  this.prev = null;
+	  this.head = null;	
   }
 	
   addToBegin(data) {
-	if (!this.had) {
-  	  this.head = new List();
-	  this.head.data = data;
-	  this.head.next = null;
-	  this.head.prev = null;	
-	  return;
-	}
+	  if (!this.had) {
+    	this.head = new List();
+	    this.head.data = data;
+	    this.head.next = null;
+	    this.head.prev = null;	
+	    return;
+	  }
 
   	let node = new List();
-	node.data = data;
-	node.next = this.head;
-	node.prev = null;
-	this.head.prev = node;
-	this.head = node;
+	  node.data = data;
+	  node.next = this.head;
+	  node.prev = null;
+	  this.head.prev = node;
+	  this.head = node;
   }
 	
   remove(data) {
-	let temp = this.head;
-	while (temp) {
-  	  if (temp.data === data) {
+	  let temp = this.head;
+	  while (temp) {
+    	if (temp.data === data) {
         if (!temp.next) {
           temp.prev.next = null;
           return;
@@ -42,17 +42,17 @@ class List {
         temp.next.prev = temp.prev;
         return;
       }
-	  temp = temp.next;
-	}
-	console.log(`List haven't ${data} element!`);		
+	    temp = temp.next;
+    }
+	  console.log(`List haven't ${data} element!`);		
   }
 	
   print() {
     let temp = this.head;
-	while (temp) {
+	  while (temp) {
   	  console.log(temp.data);
-	  temp = temp.next;
-	}
+	    temp = temp.next;
+	  }
   }  
 };
 
